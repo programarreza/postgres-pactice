@@ -1,0 +1,42 @@
+
+SHOW timezone;
+
+SELECT NOW()
+
+
+-- step-1 create table 
+CREATE TABLE timeZ (ts TIMESTAMP WITHOUT TIME ZONE, tsz TIMESTAMP WITH TIME ZONE)
+
+-- step-2 insert data
+INSERT INTO timez VALUES('2024-01-12 10:45:00', '2024-01-12 10:45:00')
+
+-- step-3 get table data
+SELECT * FROM timez
+
+SELECT NOW()
+
+SELECT CURRENT_DATE
+
+-- custing date
+SELECT NOW()::DATE;
+
+SELECT NOW()::TIME;
+
+SELECT to_char(now(), 'DDD')
+
+SELECT CURRENT_DATE - INTERVAL '1 year 3 hours 20 minutes'
+
+SELECT AGE(CURRENT_DATE, '2002-01-01')
+
+SELECT *, AGE(CURRENT_DATE, dob) FROM students
+
+SELECT EXTRACT(DAY FROM '2024-10-25'::DATE)
+
+SELECT 1::BOOLEAN;
+
+SELECT 0::BOOLEAN;
+
+SELECT 'y'::BOOLEAN
+
+SELECT 'n'::BOOLEAN
+

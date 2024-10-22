@@ -41,4 +41,21 @@ VALUES
 ('Cathy Reed', 'HR', 63000.00, '2023-01-21');
 
 
-SELECT * FROM employees
+-- Retrieved all employees whose salary is greater then the highest salary of the HR department 
+SELECT MAX(salary) FROM employees WHERE department_name = 'HR' -- 63000
+
+SELECT * FROM employees 
+	WHERE salary > (SELECT MAX(salary) FROM employees WHERE department_name = 'HR')
+
+
+SELECT department_name, SUM(salary) FROM employees 
+	GROUP BY department_name
+
+
+SELECT * FROM -- outer-query/main-query
+(SELECT department_name, SUM(salary) FROM employees 
+	GROUP BY department_name) as sum_dept_salary -- sub query
+
+
+SELECT employee_name, salary, department_name FROM employees
+	WHERE  department_name in (SELECT department_name FROM employees WHERE department_name LIKE '%R%');
